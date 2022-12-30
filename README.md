@@ -22,12 +22,12 @@ conversation handling, etc.
 
 Install from PyPI:
 ```sh
-pip install chatbotAI
+pip install chatbotAI-Fr
 ```
 
 install from github:
 ```sh
-git clone https://github.com/ahmadfaizalbh/Chatbot.git
+git clone https://github.com/Franki1607/Chatbot.git
 cd Chatbot
 python setup.py install
 ```
@@ -37,9 +37,9 @@ python setup.py install
 >>> from chatbot import demo
 >>> demo()
 Hi, how are you?
-> i'm fine
+> Bonjour
 Nice to know that you are fine  
-> quit
+> Quitter
 Thank you for talking with me.
 >>> 
 ```

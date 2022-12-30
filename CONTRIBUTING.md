@@ -17,6 +17,6 @@ All contributers should make sure the code they submist should be pythonic and s
 To participate under these terms, all that you must do is include a line like the following as the
 last line of the commit message for each commit in your contribution:
 
-    Signed-Off-By: Random AB. Developer <random@developer.example.org>
+    Signed-Off-By: Franki1607. Developer
 
 The simplest way to accomplish this is to add `-s` or `--signoff` to your `git commit` command.

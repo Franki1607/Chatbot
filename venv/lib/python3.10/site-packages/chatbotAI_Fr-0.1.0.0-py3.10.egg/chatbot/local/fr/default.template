@@ -1,0 +1,50 @@
+{% block %}
+    {% client %}(S'il te plaît|S'il vous plaît|Svp|Stp|Please) (.*){% endclient %}
+    {% response %}{% chat %1 %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Comment tu t'appelles|Quel est ton nom|Qui es tu|Ton nom|Donne ton nom{% endclient %}
+    {% response %}Moi c'est ChatBot{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Appelle-moi|Moi c'est|Appelle moi|Je suis|Mon nom est) (.*){% endclient %}
+    {% response %}Je vais m'en souvenir {name:%1}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Quel est mon nom|Tu me connais|Mon nom{% endclient %}
+    {% response %}{%if {name} %}Votre nom est {name}{% else %} Je ne connais pas votre nom, pouvez-vous me dire votre nom s'il vous plaît ?{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Appelle-moi |Moi c'est |Appelle moi |Je suis |Mon nom est )?(.){% endclient %}
+    {% prev %}(.)Pouvez-vous me dire votre nom s'il vous plaît ?{% endprev %}
+    {% response %}Merci {name:%2}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Tu connais mon nom|tu t'en souviens|Quel est mon nom|Mon nom{% endclient %}
+    {% response %}{% if {name} %}Oui je le connais {name}{% else %}Non,{% chat "Quel est mon nom" %}{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}Comment vas tu| Comment allez vous|Ca va|Vas tu bien|En forme{% endclient %}
+    {% response %}{% if {name} %}Oui je le connais {name}{% else %}Non,{% chat "Quel est mon nom" %}{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Je (suis|me sens|vais) )?(en train de me sentir )?(très )?(.*){% endclient %}
+    {% prev %}.*comment allez vous{% endprev %}
+    {% response %}{% if {%low %5 %} == bien | {%low %5 %} == très bien | {%low %5 %} == bon | {%low %5 %} == très bon | {%low %5 %} == heureux | {%low %5 %} == génial | {%low %5 %} == super | {%low %5 %} == formidable %} C'est agréable de savoir que tu te sens %5. Quoi d'autre ? {% else %} Pourquoi te sens-tu %5 ?{% endif %}{% endresponse %}
+{% endblock %}
+
+{% block %}
+    {% client %}(Bonjour|Salut|Coucou)(.*){% endclient %}
+    {% response %}Salut heureux de vous revoir! Comment allez vous?{% endresponse %}
+    {% response %}Cocou heureux de vous revoir! Comment allez vous?{% endresponse %}
+{% endblock %}
+
+{% response %}Je n'ai pas compris! Pouvez vous reformuler svp!{% endresponse %}
+{% response %}Donnez moi plus d'information svp! Je n'ai pas compris{% endresponse %}

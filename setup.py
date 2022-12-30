@@ -26,13 +26,12 @@ package_dir = {
         'chatbot.chat_gui': 'chatbot/chat_gui'
     }
 setup(
-    name='chatbotAI',
+    name='chatbotAI-Fr',
     version=version['__version__'],
-    author="Ahmad Faizal B H",
-    author_email="ahmadfaizalbh726@gmail.com",
+    author="Mignonhome Franklin Camel AHONON",
+    author_email="mignonfranklincamel@gmail.com",
     url="https://github.com/ahmadfaizalbh/Chatbot",
-    description="A chatbot AI engine is a chatbot builder platform that provides both bot intelligence and"
-                " chat handler with minimal codding",
+    description="Chatbot AI Fr is a chatbot creation platform that provides both bot intelligence and chat manager with minimal coding based on Ahmad Faizal's code (https://github.com/ahmadfaizalbh/Chatbot) and trained to understand French language with over 332k words.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=list(package_dir.keys()),
@@ -47,6 +46,7 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Natural Language :: French',
         'Natural Language :: English',
         'Natural Language :: German',
         'Natural Language :: Portuguese (Brazilian)',

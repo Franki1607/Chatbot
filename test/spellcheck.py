@@ -6,7 +6,7 @@ from chatbot.spellcheck import SpellChecker
 
 def unit_tests():
     local_path = path.join(path.dirname(path.abspath(chatbot.__file__)), "local")
-    spell_checker = SpellChecker(local_path, language='en')
+    spell_checker = SpellChecker(local_path, language='fr')
     assert spell_checker.correction('speling') == 'spelling'               # insert
     assert spell_checker.correction('korrectud') == 'corrected'            # replace 2
     assert spell_checker.correction('bycycle') == 'bicycle'                # replace
